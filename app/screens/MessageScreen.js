@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, SafeAreaView, StyleSheet, Platform, StatusBar} from 'react-native';
+import { FlatList, SafeAreaView, StyleSheet} from 'react-native';
 import ListOwner from '../componenets/ListOwner';
 import Constants from 'expo-constants';
 
@@ -18,6 +18,7 @@ const messages = [
         image: require("../assets/user.png"),
     }
 ]
+console.log(Constants)
 function MessageScreen() {
     return (
         <SafeAreaView style={styles.screens}>
@@ -30,7 +31,7 @@ function MessageScreen() {
 }
 const styles = StyleSheet.create({
     screens: {
-        padding: Platform.OS === "android" ? StatusBar.currentHeight : 0
+        paddingTop: Constants.statusBarHeight
     }
 });
 
